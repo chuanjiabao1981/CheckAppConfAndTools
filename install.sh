@@ -1,17 +1,18 @@
+CHECK_APP_USER=work
 CHECKAPP_SUDO_FILE=/etc/sudoers.d/checkapp
 CHECKAPP_MYSQL_CONF=/etc/mysql/conf.d/checkapp.cnf
-DATA_DIR=/home/work/mysql_data/
+DATA_DIR=/home/$CHECK_APP_USER/mysql_data/
 
 ##创建用户组
 #groupadd checkapp
 ##添加用户
-#adduser work
+#adduser $CHECK_APP_USER
 ##加入组
-#adduser work admin
-#adduser work checkapp
+#adduser $CHECK_APP_USER admin
+#adduser $CHECK_APP_USER checkapp
 ##把 admin组加入sudo权限
 #rm $CHECKAPP_SUDO_FILE
-#echo 'work	ALL=(ALL:ALL) ALL' > $CHECKAPP_SUDO_FILE
+#echo "$CHECK_APP_USER	ALL=(ALL:ALL) ALL" > $CHECKAPP_SUDO_FILE
 #chmod 0440 $CHECKAPP_SUDO_FILE
 #su - work
 
@@ -56,7 +57,7 @@ DATA_DIR=/home/work/mysql_data/
 ##建新表
 #mysql -u root -p -e'CREATE DATABASE check_app_production'
 ##用户授权
-#mysql -u root -p -e"GRANT ALL PRIVILEGES ON check_app_production.* TO 'work'@'localhost' IDENTIFIED BY '12345678';"
+#mysql -u root -p -e"GRANT ALL PRIVILEGES ON check_app_production.* TO '$CHECK_APP_USER'@'localhost' IDENTIFIED BY '12345678';"
 
 
 ##下载应用程序
