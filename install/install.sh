@@ -1,21 +1,4 @@
-CHECKAPP_USER=work
-CHECKAPP_SUDO_FILE=/etc/sudoers.d/checkapp.$CHECKAPP_USER
-CHECKAPP_MYSQL_CONF=/etc/mysql/conf.d/checkapp.cnf
-DATA_DIR=/home/$CHECKAPP_USER/mysql_data/
-
-##创建用户组
-groupadd checkapp
-##添加用户
-adduser $CHECKAPP_USER
-##加入组
-adduser $CHECKAPP_USER admin
-adduser $CHECKAPP_USER checkapp
-#把 admin组加入sudo权限
-rm $CHECKAPP_SUDO_FILE
-echo "$CHECKAPP_USER	ALL=(ALL:ALL) ALL" > $CHECKAPP_SUDO_FILE
-chmod 0440 $CHECKAPP_SUDO_FILE
-su - work
-
+. ../evn.sh
 ##安转依赖的包
 sudo apt-get install build-essential openssl libreadline6 libreadline6-dev curl git-core zlib1g zlib1g-dev libssl-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt-dev autoconf libc6-dev ncurses-dev automake libtool bison subversion imagemagick libmagickcore-dev libmagickwand-dev nodejs libcurl4-openssl-dev  libcurl4-gnutls-dev 
 
