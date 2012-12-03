@@ -1,6 +1,6 @@
 . ../env.sh
 ##安转依赖的包
-sudo apt-get install build-essential openssl libreadline6 libreadline6-dev curl git-core zlib1g zlib1g-dev libssl-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt-dev autoconf libc6-dev ncurses-dev automake libtool bison subversion imagemagick libmagickcore-dev libmagickwand-dev nodejs libcurl4-openssl-dev  libcurl4-gnutls-dev 
+sudo apt-get install build-essential openssl libreadline6 libreadline6-dev curl git-core zlib1g zlib1g-dev libssl-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt-dev autoconf libc6-dev ncurses-dev automake libtool bison subversion imagemagick libmagickcore-dev libmagickwand-dev nodejs libcurl4-openssl-dev 
 
 ##安装rvm
 curl -L get.rvm.io | bash -s stable
