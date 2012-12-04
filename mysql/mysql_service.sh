@@ -1,5 +1,6 @@
-DATA_DIR=/home/work/mysql_data/
+DIR_PATH=$(cd "$(dirname "$0")"; pwd)
 
+. $DIR_PATH/../env.sh
 start_mysql()
 {
 	echo "Starting Mysql..\n"

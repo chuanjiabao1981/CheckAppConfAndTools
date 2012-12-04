@@ -37,8 +37,12 @@ init_connect 		= 	'SET NAMES utf8'
 EOF"
 #创建新库
 sudo mysql_install_db --user=mysql --datadir=$DATA_DIR
+sudo service mysql stop
+#启动新的数据库
+../mysql/mysql_service.sh start
 #修改root密码
 mysql_secure_installation
+
 #建新表
 mysql -u root -p -e'CREATE DATABASE check_app_production'
 #用户授权
