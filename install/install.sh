@@ -44,8 +44,10 @@ sudo service mysql stop
 mysql_secure_installation
 
 #建新表
+echo "create new database for checkapp"
 mysql -u root -p -e'CREATE DATABASE check_app_production'
 #用户授权
+echo "assgin privileges to $CHECKAPP_USER"
 mysql -u root -p -e"GRANT ALL PRIVILEGES ON check_app_production.* TO '$CHECKAPP_USER'@'localhost' IDENTIFIED BY '12345678';"
 
 
