@@ -35,7 +35,10 @@ default-character-set	=	utf8
 character_set_server 	= 	utf8
 init_connect 		= 	'SET NAMES utf8'
 EOF"
-#创建新库
+#apparmor是ubutun的权限控制机制,我们不需要这个东西
+sudo mv /etc/apparmor.d/usr.sbin.mysqld /etc/apparmor.d/disable/
+sudo /etc/init.d/apparmor reload
+##创建新库
 sudo mysql_install_db --user=mysql --datadir=$DATA_DIR
 sudo service mysql stop
 #启动新的数据库
@@ -58,4 +61,5 @@ cd application
 git clone git://github.com/chuanjiabao1981/CheckApp.git
 ln -s CheckApp current
 cd current
-bundle install
+echo "重新登录然后 bundle install"
+#bundle install
