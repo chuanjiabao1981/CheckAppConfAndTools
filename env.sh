@@ -7,3 +7,6 @@ NGINX_DIR=/opt/nginx/
 NGINX_BIN=$NGINX_DIR/sbin/nginx
 NGINX_CONF=$NGINX_DIR/conf/nginx.conf
 
+BACKUP_DIR=/home/$CHECKAPP_USER/data/backup_data/
+BACKUP_MEDIA_FILES=/home/$CHECKAPP_USER/application/current/public/report_media
+BACKUP_LOG_DIR=$BACKUP_DIR/log
