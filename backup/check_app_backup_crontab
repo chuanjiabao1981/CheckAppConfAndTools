@@ -1,1 +1,1 @@
-0 23 * * * work /home/work/CheckAppConfAndTools/backup/backup_cron.sh 1>/tmp/backup.log 2>&1
+0 23 * * * /home/work/CheckAppConfAndTools/backup/backup_cron.sh 1>/tmp/backup.log 2>&1
