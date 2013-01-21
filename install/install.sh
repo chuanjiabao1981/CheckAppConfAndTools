@@ -61,5 +61,6 @@ cd application
 git clone git://github.com/chuanjiabao1981/CheckApp.git
 ln -s CheckApp current
 cd current
-echo "重新登录然后 bundle install"
-#bundle install
+bundle install
+echo "重新登录然后 再次执行bundle install"
+echo "这个应该是由于执行这个命令导致的rvm gemset use global,抽时间确认一下"
